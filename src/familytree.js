@@ -13538,36 +13538,60 @@ var FamilyTree = function (e, t) {
       r();
     }
   }),
-  (FamilyTree.remote._findRegion = function (callback) {
-    var cachedUrl = FamilyTree.localStorage.getItem("funcUrl");
-    if (cachedUrl) {
-      callback(cachedUrl);
-    } else {
-      var regions = [
-        "au-e", "au-se", "brs", "ca", "ca-e", "easia", "eus-2", "eus", "fr",
-        "ind", "jp-e", "jp-w", "kr", "n-eu", "se-asia", "s-ind", "uk-s",
-        "uk-w", "us", "us-n-c", "us-s-c", "w-c-us", "w-eu", "w-ind",
-        "w-us-2", "wus",
-      ];
-  
-      for (var i = 0; i < regions.length; i++) {
-        (function (region) {
-          var xhr = new XMLHttpRequest();
-          var proxyUrl = '/api/findRegion?region=' + region; // Call the Vercel API route
-  
-          xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-              FamilyTree.localStorage.setItem("funcUrl", proxyUrl);
-              callback(proxyUrl);
-              for (var j = 0; j < regions.length; j++) {
-                xhr.abort(); // Stop other requests once a successful one is found
-              }
+  (FamilyTree.remote._findRegion = function (e) {
+    var t = FamilyTree.localStorage.getItem("funcUrl");
+    if (t) e(t);
+    else {
+      for (
+        var i = [
+            "au-e",
+            "au-se",
+            "brs",
+            "ca",
+            "ca-e",
+            "easia",
+            "eus-2",
+            "eus",
+            "fr",
+            "ind",
+            "jp-e",
+            "jp-w",
+            "kr",
+            "n-eu",
+            "se-asia",
+            "s-ind",
+            "uk-s",
+            "uk-w",
+            "us",
+            "us-n-c",
+            "us-s-c",
+            "w-c-us",
+            "w-eu",
+            "w-ind",
+            "w-us-2",
+            "wus",
+          ],
+          r = [],
+          a = 0;
+        a < i.length;
+        a++
+      )
+        r.push(new XMLHttpRequest());
+      for (a = 0; a < i.length; a++)
+        !(function () {
+          var t =
+              "https://" +
+              i[a] +
+              "-balkangraph.azurewebsites.net/api/OrgChartJS",
+            n = r[a];
+          (n.onreadystatechange = function () {
+            if (4 == this.readyState && 200 == this.status) {
+              FamilyTree.localStorage.setItem("funcUrl", t), e(t);
+              for (var i = 0; i < r.length; i++) r[i].abort();
             }
-          };
-  
-          xhr.open("GET", proxyUrl, true);
-          xhr.send(); 
-        })(regions[i]);
-      }
+          }),
+            n.open("GET", t, !0),
+            n.send();
+        })();
     }
   });
