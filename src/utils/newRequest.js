@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newRequest = axios.create({
-    baseURL :"https://renderfamilybackend-1.onrender.com",
+    baseURL :"https://renderfamilybackend-c23e.onrender.com",
     withCredentials:true,
 })
 
