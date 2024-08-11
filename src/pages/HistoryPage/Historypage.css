@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* A light background color for better contrast */
+}
+
+.navbar {
+    position: fixed; /* Fixed position to keep it at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure navbar is above other content */
+    margin-bottom: 20px;
+    padding: 10px; /* Padding for the navbar */
+   
+    background-color: #ffcb2e; /* Background color for the navbar */
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure no scrollbars for the container */
+    padding-top: 60px; /* Adjusted to account for fixed navbar */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('famhouse.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: -1; /* Ensure behind content */
+}
+
+.title, .textArea {
+    position: relative;
+    z-index: 2;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Adds a blur effect behind the text elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+    background-color: rgba(255, 255, 255, 0.7); /* More transparent background */
+}
+
+.title {
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 2.5em;
+    color: #333; /* Darker text color for better readability */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Adds a subtle text shadow */
+}
+
+.textArea {
+    margin: 20px;
+    padding: 30px;
+    font-size: 1.2em;
+    color: #333;
+    max-height: 60vh;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+.textArea p {
+    margin-bottom: 1em;
+}
+
+.title:hover, .textArea:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances shadow on hover */
+}

@@ -1,0 +1,47 @@
+/* Navbar.css */
+
+.navbar {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px; /* Padding for the navbar */
+ 
+  background-color: #ffcf23; /* Background color for the navbar */
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+}
+
+.navbar ul li {
+  display: inline-block; /* Display items in a line */
+  margin-right: 10px; /* Adjust spacing between items */
+}
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Remove margin on the last item */
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 12px; /* Padding inside the navbar links */
+  border-radius: 3px; /* Rounded corners for the links */
+}
+
+.navbar ul li a:hover {
+  background-color: #ddd; /* Background color on hover */
+}
+.navContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  
+  padding: 20px 40px;
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+  
+}
+

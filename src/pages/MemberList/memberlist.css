@@ -1,0 +1,79 @@
+.member-list {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.member-list h1, .member-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.member-list .top-right-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.member-list .top-right-buttons button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.member-list .top-right-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+table {
+  width: auto; /* Allow table to expand as needed */
+  min-width: 100%; /* Minimum width of the table */
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed; /* This will help control column widths */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+th, td {
+  padding: 8px; /* Reduced padding for smaller cells */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* Ensures text wraps within cells */
+  white-space: normal;
+  font-size: 14px; /* Smaller font size for better readability */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e6e6e6;
+}
+
+td img {
+  max-width: 50px;
+  height: auto;
+}
